@@ -1,0 +1,16 @@
+[Unit]
+Description=Spring Boot Employees Api
+After=syslog.target
+After=network.target[Service]
+User=root
+Type=simple
+
+[Service]
+ExecStart=/usr/bin/java -jar /root/Employees-Rest-Api/target/springboot-app-0.0.1-SNAPSHOT.jar
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=employees_api
+
+[Install]
+WantedBy=multi-user.target

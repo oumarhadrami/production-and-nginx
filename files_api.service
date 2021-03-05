@@ -1,16 +1,16 @@
 [Unit]
-Description=Spring Boot HelloWorld
+Description=Spring Boot Files Api
 After=syslog.target
 After=network.target[Service]
 User=root
 Type=simple
 
 [Service]
-ExecStart=/usr/bin/java -jar /root/hello-world/build/libs/hello-world-0.0.1-SNAPSHOT.jar
+ExecStart=/usr/bin/java -jar /root/Files-Rest-Api/target/springboot-app-0.0.1-SNAPSHOT.jar
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=helloworld
+SyslogIdentifier=files_api
 
 [Install]
 WantedBy=multi-user.target
